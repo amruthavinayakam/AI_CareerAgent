@@ -22,7 +22,7 @@ embeddings = OpenAIEmbeddings()
 class ResearchAgent:
     def __init__(self):
         self.memory = ConversationBufferMemory(memory_key="chat_history")
-        self.vector_store = Chroma(embedding_function=embeddings)
+        self.vector_store = Chroma(embedding_function=embeddings, persist_directory="chroma_db")
         
     def search_web(self, query: str) -> str:
         """Search the web using Tavily API"""
