@@ -143,22 +143,77 @@ class ResearchAgent:
             return []
 
 def main():
-    st.title("AI Research Agent - Amrutha Vinayakam")
-    st.write("Enter your research query below:")
+    # Set page config
+    st.set_page_config(
+        page_title="AI Career Advisor",
+        page_icon="🎯",
+        layout="wide"
+    )
+
+    # Custom CSS
+    st.markdown("""
+        <style>
+        .main {
+            background-color: #ffffff;
+        }
+        .stButton>button {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+        }
+        .stButton>button:hover {
+            background-color: #34495e;
+            transition: background-color 0.3s ease;
+        }
+        .title-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .subtitle-text {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        .result-box {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 1rem 0;
+            border: 1px solid #e9ecef;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    # Header
+    st.markdown('<div class="title-text">AI Career Advisor</div>', unsafe_allow_html=True)
+    st.markdown('<div class="subtitle-text">Your personal guide to career exploration and development</div>', unsafe_allow_html=True)
     
     # Initialize the research agent
     agent = ResearchAgent()
     
-    # Create a text input for the query
-    query = st.text_input("Research Query")
+    # Create two columns for input and results
+    col1, col2 = st.columns([1, 2])
     
-    if st.button("Research"):
-        if query:
-            with st.spinner("Searching the web..."):
+    with col1:
+        st.markdown("### 🔍 Career Query")
+        query = st.text_input("", placeholder="e.g., Data Science, Software Engineering, Digital Marketing")
+        
+        if st.button("Get Career Insights 🚀"):
+            if not query:
+                st.warning("Please enter a career query to get started.")
+    
+    with col2:
+        if query and st.session_state.get('button_clicked', False):
+            with st.spinner("🔍 Researching career opportunities..."):
                 # Search the web
                 search_results = agent.search_web(query)
-                st.write("Web Search Results:")
-                st.json(search_results)
                 
                 # Store the results
                 agent.store_information(search_results)
@@ -178,10 +233,15 @@ def main():
                 else:
                     summary = str(response)
                 
-                st.write("Summary:")
-                st.markdown(summary)  # Use markdown to properly render the formatted text
-        else:
-            st.warning("Please enter a research query.")
+                # Display results in a beautiful box
+                st.markdown('<div class="result-box">', unsafe_allow_html=True)
+                st.markdown("### 📊 Career Insights")
+                st.markdown(summary)
+                st.markdown('</div>', unsafe_allow_html=True)
+    
+    # Footer
+    st.markdown("---")
+    st.markdown("Made with ❤️ by Amrutha Vinayakam")
 
 if __name__ == "__main__":
     main() 
