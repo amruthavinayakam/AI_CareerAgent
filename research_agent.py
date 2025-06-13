@@ -205,7 +205,7 @@ def main():
         st.markdown("### 🔍 Career Query")
         query = st.text_input("", placeholder="e.g., Data Science, Software Engineering, Digital Marketing")
         
-        if st.button("Get Career Insights 🚀"):
+        if st.button("Get Career Insights "):
             if not query:
                 st.warning("Please enter a career query to get started.")
     
@@ -237,11 +237,7 @@ def main():
                 st.markdown('<div class="result-box">', unsafe_allow_html=True)
                 st.markdown("### 📊 Career Insights")
                 st.markdown(summary)
-                st.markdown('</div>', unsafe_allow_html=True)
-    
-    # Footer
-    st.markdown("---")
-    st.markdown("Made with ❤️ by Amrutha Vinayakam")
+                st.markdown('</div>', unsafe_allow_html=True)    
 
 if __name__ == "__main__":
     main() 
