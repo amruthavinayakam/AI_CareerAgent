@@ -1,11 +1,11 @@
-# AI Research Agent
+# AI Career Agent
 
-An intelligent research assistant that combines web search capabilities with AI-powered analysis and information storage.
+An intelligent Career assistant that combines web search capabilities with AI-powered analysis and information storage.
 
 ## Features
 
-- Web search using Tavily API
-- AI-powered analysis using OpenAI's GPT models
+- Web search using SERPAPI
+- AI-powered analysis using Google's Gemini model.
 - Vector storage using ChromaDB for efficient information retrieval
 - User-friendly interface built with Streamlit
 - Conversation memory for context-aware interactions
@@ -19,8 +19,8 @@ An intelligent research assistant that combines web search capabilities with AI-
    ```
 3. Create a `.env` file in the root directory with your API keys:
    ```
-   OPENAI_API_KEY=your_openai_api_key_here
-   TAVILY_API_KEY=your_tavily_api_key_here
+   GOOGLE_API_KEY=your_openai_api_key_here
+   SERP_API_KEY=your_tavily_api_key_here
    ```
 
 ## Usage
@@ -36,8 +36,8 @@ An intelligent research assistant that combines web search capabilities with AI-
 ## Requirements
 
 - Python 3.8+
-- OpenAI API key
-- Tavily API key
+- Gemini API key
+- SERP API key
 
 ## Project Structure
 
