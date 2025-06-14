@@ -6,7 +6,7 @@ from langchain.agents import Tool, AgentExecutor, LLMSingleActionAgent
 from langchain.prompts import StringPromptTemplate
 from langchain.memory import ConversationBufferMemory
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain.vectorstores import Chroma
+from langchain_chroma import Chroma
 from serpapi import GoogleSearch
 from typing import List, Union
 import json
@@ -88,7 +88,7 @@ The final response should be ready for direct display in a UI or document withou
 
 class ResearchAgent:
     def __init__(self):
-        self.memory = ConversationBufferMemory(memory_key="chat_history")
+        self.memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
         # Create a new collection each time to avoid dimension mismatch
         self.vector_store = Chroma(
             embedding_function=embeddings,
@@ -203,11 +203,13 @@ def main():
     
     with col1:
         st.markdown("### 🔍 Career Query")
-        query = st.text_input("", placeholder="e.g., Data Science, Software Engineering, Digital Marketing")
+        query = st.text_input("Career Query", placeholder="e.g., Data Science, Software Engineering, Digital Marketing")
         
         if st.button("Get Career Insights "):
             if not query:
                 st.warning("Please enter a career query to get started.")
+            else:
+                st.session_state['button_clicked'] = True
     
     with col2:
         if query and st.session_state.get('button_clicked', False):
