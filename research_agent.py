@@ -202,7 +202,7 @@ def main():
     col1, col2 = st.columns([1, 2])
     
     with col1:
-        st.markdown("### 🔍 Career Query")
+        st.markdown("### 🔍 Career Queryy")
         query = st.text_input("Career Query", placeholder="e.g., Data Science, Software Engineering, Digital Marketing")
         
         if st.button("Get Career Insights "):
