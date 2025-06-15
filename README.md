@@ -1,23 +1,23 @@
-# 🧠 AI Career Agent
+#  AI Career Agent
 
 An intelligent AI-powered career assistant that combines web search capabilities with curated roadmap insights to deliver structured, role-specific career guidance. It leverages Google's Gemini model, SERP API, Chroma vector storage, and Streamlit UI for a complete Retrieval-Augmented Generation (RAG) experience.
 
 ---
 
-## 🚀 Features
+##  Features
 
-* 🔍 **Smart Web Search** via SERP API
-* 📚 **Roadmap Crawler** for extracting role-specific paths from [roadmap.sh](https://roadmap.sh)
-* 🤖 **AI-Powered Summarization** using Gemini 2.0 Flash
-* 🧠 **Vector-Based Knowledge Storage** using ChromaDB
-* 🗂️ **Context-Aware Memory** with LangChain
-* 🧑‍💻 **User-Friendly Interface** built with Streamlit
-* 📄 **Structured Career Guides** in markdown format
-* 🛡️ Logging enabled with timestamps for observability and debugging
+*  **Smart Web Search** via SERP API
+*  **Roadmap Crawler** for extracting role-specific paths from [roadmap.sh](https://roadmap.sh)
+*  **AI-Powered Summarization** using Gemini 2.0 Flash
+*  **Vector-Based Knowledge Storage** using ChromaDB
+*  **Context-Aware Memory** with LangChain
+*  **User-Friendly Interface** built with Streamlit
+*  **Structured Career Guides** in markdown format
+* 🛡 Logging enabled with timestamps for observability and debugging
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 1. **Clone this repository**
 
@@ -42,7 +42,7 @@ An intelligent AI-powered career assistant that combines web search capabilities
 
 ---
 
-## ▶️ Usage
+##  Usage
 
 1. **Start the application**
 
@@ -66,7 +66,7 @@ An intelligent AI-powered career assistant that combines web search capabilities
 
 ---
 
-## 🧰 Requirements
+##  Requirements
 
 * Python 3.8+
 * [Google Gemini API key](https://ai.google.dev/)
@@ -74,7 +74,7 @@ An intelligent AI-powered career assistant that combines web search capabilities
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 | File                 | Description                               |
 | -------------------- | ----------------------------------------- |
