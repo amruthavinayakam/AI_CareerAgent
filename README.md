@@ -13,7 +13,7 @@ An intelligent AI-powered career assistant that combines web search capabilities
 *  **Context-Aware Memory** with LangChain
 *  **User-Friendly Interface** built with Streamlit
 *  **Structured Career Guides** in markdown format
-* 🛡 Logging enabled with timestamps for observability and debugging
+*  **Logging enabled** with timestamps for observability and debugging
 
 ---
 
